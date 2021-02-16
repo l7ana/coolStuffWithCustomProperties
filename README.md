@@ -1,6 +1,6 @@
 # Cool Stuff With Custom Properties
 
-[View Demo](https://frzrbox.github.io/coolStuffWithCustomProperties/finished/)
+[View Demo](https://l7ana.github.io/coolStuffWithCustomProperties/start/)
 
 ## Get Started
 
