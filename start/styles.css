@@ -19,6 +19,9 @@
 	--font-regular: 'Space Grotesk Regular';
 	--font-medium: 'Space Grotesk Medium';
 	--font-bold: 'Space Grotesk Bold';
+	--color-primary: #ff3f34;
+	--color-secondary:#ffd32a;
+	--color-tertiary: #3c40c6;
 }
 
 /* Base Styles */
@@ -30,11 +33,26 @@ html {
 *:before,
 *:after {
 	box-sizing: inherit;
+	font-family: var(--font-light);
 }
 
 body {
 	margin: 0;
 	padding: 0;
+	cursor: none;
+}
+
+em {
+	color: var(--color-secondary);
+}
+
+strong {
+	font-family: var(--font-bold);
+	color: var(--color-primary);
+}
+
+a {
+	color: var(--color-tertiary);
 }
 
 .container {
@@ -75,6 +93,62 @@ body {
 	width: 100%;
 	height: 50vh;
 	object-fit: cover;
+	filter: brightness(0.9);
+}
+
+.project-item:hover video {
+	filter: brightness(1);
 }
 
 /* Cursor */
+@media(hover:none) {
+	.cursor {
+		display: none;
+	}
+}
+
+.cursor{
+	--height: 20px;
+	--width: 20px;
+	--background: var(--color-secondary);
+
+	height: var(--height);
+	width: var(--width);
+	background: var(--background);
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	transition: transform 0.3s ease-out;
+	transform: translate(-50%,-50%) translate(var(--x), var(--y));
+}
+
+.cursor[data-type='default'] {
+    border-radius: 50%;
+}
+
+.cursor[data-type="portrait"]{
+	--height: 500px;
+	--width: 300px;
+	--background: url('./assests/chris.jpg');
+
+	background-size: contain;
+	z-index: -1;
+	background-repeat: no-repeat;
+}
+
+.cursor[data-type='blend'] {
+	border-radius: 50%;
+	mix-blend-mode: difference;
+	transform: translate3d(-50%, -50%, 0) translate3d(var(--x), var(--y), 0)
+		scale(5);
+}
+
+.cursor[data-type='view'] {
+	--height: 50px;
+	--width: 100px;
+	--background: url('./assests/view.png');
+
+	background-size: contain;
+	background-repeat: no-repeat;
+}
