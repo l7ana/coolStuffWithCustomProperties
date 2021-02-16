@@ -1,6 +1,6 @@
 # Cool Stuff With Custom Properties
 
-[View Demo](https://l7ana.github.io/coolStuffWithCustomProperties/start/)
+[View Demo](https://l7ana.github.io/coolStuffWithCustomProperties/start/index.html)
 
 ## Get Started
 
